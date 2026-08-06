@@ -76,6 +76,11 @@ publisher for a supplier taking space.
   art, fill `(0.118, 0.098, 0.415)` (ABB extract, printed p.355). Shape (e) is
   the largest single house block seen so far and is the only one that carries
   its own sub-brand logo — do not mistake MaintenancePRO for a supplier.
+  Shape (e) has now been seen on two unrelated extracts (ABB motors printed
+  p.355; Apex/Crescent hand tools printed p.6) at different sizes — 0.297 and
+  0.177 of a page — so treat it as a recurring fixture of this catalog rather
+  than a one-off, and measure its box border each time instead of reusing a
+  prior run's rectangle.
   Shape (d) has no promo-style heading at all
   and reads like body copy — identify it by the applied.com call-to-action and
   the absence of any supplier logo. The black running banner carrying the
@@ -127,6 +132,39 @@ p.20) alongside Baldor-Reliance. Left standalone for the same reason as
 Lovejoy: RIDGID is commonly associated with Emerson and JET with JPW
 Industries, but neither parent is named or logo'd on the page. Confirm before
 rolling up. Same run.
+
+**Crescent** (hand tools) — measured as a family. **Wiss**, **Nicholson** and
+**Lufkin** each print the Crescent "C" lockup directly above their own
+wordmark (`CRESCENT / WISS`, `CRESCENT / NICHOLSON`, `CRESCENT / LUFKIN`), so
+the family is stated by the artwork, same justification as ABB Baldor-Reliance.
+Crescent's own "C" mark is vector art in red-orange, fill
+`(0.785, 0.252, 0.154)`. Grouped in `MAP` under the `Crescent` prefix so the
+family subtotal and the per-brand rows are both visible.
+— Applied master catalog Hand, Power & Analytical Tools chapter, printed
+pp. 6-8, 10, 11 (2026-08).
+
+**GEARWRENCH** — deliberately NOT folded into Crescent. GEARWRENCH and Crescent
+are both Apex Tool Group brands and the extract was delivered under the file
+name "Apex_Hand_Tool_Crescent", but **no Apex logo or wording appears anywhere
+in the extract**, and a file name is not on-page evidence. Logo is a two-part
+vector wordmark, orange `(0.929, 0.542, 0.134)` + near-black. If the billing
+owner wants an Apex Tool Group roll-up, GEARWRENCH and the whole Crescent
+family go into it together — ask before applying.
+
+**Empire** (Empire Level — box levels, I-beam levels). Standalone here; often
+associated with Milwaukee Tool, but no Milwaukee branding appears on Empire's
+blocks. **Precision Brand** (feeler gages, thickness gages) — standalone.
+**Anchor Brand** ("Pure Quality, Pure Value, Since 1963" — adjustable wrenches).
+Note this is *not* obviously the same entity as the registry's existing
+**Anchor Wiping Cloth**; do not merge the two without confirmation.
+**Milwaukee** (tape measures) — standalone. All same run.
+
+> **Fill colors are a search hint, not an identity.** Milwaukee's logo on this
+> extract is vector art with fill `(0.890, 0.096, 0.214)` — byte-identical to
+> the fill recorded for **MCR Safety** elsewhere in this file. Two unrelated
+> brands, one red. Use a recorded fill to *find* candidate logos quickly, then
+> confirm what it actually is by rendering the page and looking. Never resolve
+> a supplier from a fill match alone.
 
 ## Standalone (no known parent/rollup)
 

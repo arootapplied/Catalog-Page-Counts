@@ -258,3 +258,45 @@ What this run added:
   usable rules); the geometric midpoint was needed exactly once, on printed
   p.355, between the last Baldor-Reliance table note (y=513.77) and the Applied
   Technical Training box border (y=567.50).
+
+## Ten-brand hand-tool chapter with drawn column rules (Apex/Crescent extract)
+
+Run against a 5-page Apex/Crescent extract of the Applied master catalog, Hand,
+Power & Analytical Tools chapter (printed pp. 6, 7, 8, 10, 11 — p.9 absent),
+603x783 pt, Engine A. Ten billable brands plus one house box across five pages;
+25 regions, zero invariant flags, every page tiling to 1.000 and the run summing
+to exactly 5.000. Result: RIDGID 1.473, Crescent family 1.802 (Crescent 1.092 +
+Lufkin 0.334 + Wiss 0.278 + Nicholson 0.098), Precision Brand 0.530, GEARWRENCH
+0.412, Empire 0.366, Anchor Brand 0.121, Milwaukee 0.118, Applied house 0.177.
+
+This is the highest brand-density run so far — ten brands on five pages — and it
+added three things:
+
+- **This chapter draws explicit vertical column-divider rules.** Every
+  multi-column page carries a real stroked vertical line (`height>80`,
+  `width<2.5`) at the column boundary: x=214.00, 389.00, 393.37, 213.87, 209.63
+  on the five pages. That is strictly better than the histogram-derived gutter
+  the earlier runs used — it is the layout stating its own boundary. Collect
+  vertical rules alongside the horizontal ones before falling back to a
+  histogram. Note the divider x differs page to page (209.63 to 393.37), so it
+  cannot be treated as an edition constant.
+- **A recorded fill color is not an identity.** Milwaukee's logo here is vector
+  art filled `(0.890, 0.096, 0.214)` — byte-identical to the fill this registry
+  had already recorded for **MCR Safety** from the PIP safety chapter. Had the
+  fill fingerprint been trusted as a lookup, the run would have billed a safety
+  brand for a tape measure. Fills are a fast way to *find* candidate logos;
+  identity still requires rendering the page. The registry now says so
+  explicitly.
+- **A whole multi-section region can be one supplier.** Printed p.7 is a
+  three-column grid whose entire left region (two columns, six separate RIDGID
+  sections with their own internal rules) is RIDGID top to bottom, with only the
+  right column splitting RIDGID over Crescent Wiss. Writing the left region as a
+  single region rather than six is both simpler and identical in area — check
+  whether adjacent sections share a supplier before subdividing.
+- The banner overstated again: it announced "16 pages" against a real `/Count`
+  of **5**. Three for three across the last three runs.
+- **A file name is not on-page evidence.** The extract arrived as
+  "Apex_Hand_Tool_Crescent" and both Crescent and GEARWRENCH are Apex Tool Group
+  brands, but no Apex logo or wording appears anywhere in it. GEARWRENCH was
+  left standalone and the Apex roll-up question handed to the billing owner
+  rather than silently applied — it would move 0.412 pages.

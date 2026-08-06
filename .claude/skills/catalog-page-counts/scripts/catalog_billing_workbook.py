@@ -142,9 +142,32 @@ MAP = {
     "Master Lock": "Master Lock",
     "Sqwincher": "Sqwincher",
     "KleenGuard (Jackson Safety)": "KleenGuard (Jackson Safety)",
+    # Motors chapter (ABB extract). The printed logo is a single combined
+    # "ABB BALDOR-RELIANCE" lockup, so the rollup is asserted by the artwork.
+    "ABB (Baldor-Reliance)": "ABB (Baldor-Reliance)",
+    "WEG": "WEG",
+    "Bison Gear": "Bison Gear",
+    "Lovejoy": "Lovejoy",
+    "JET": "JET",
+    # Crescent family (hand tools). Wiss, Nicholson and Lufkin each print the
+    # Crescent "C" lockup directly above their own wordmark, so — as with
+    # Baldor-Reliance — the family is stated by the page, not inferred.
+    # NOTE: Crescent and GEARWRENCH are both Apex Tool Group brands, but no
+    # Apex logo or wording appears anywhere in the extract, so GEARWRENCH is
+    # deliberately NOT folded in here. Confirm with the billing owner.
+    "Crescent": "Crescent",
+    "Crescent (Wiss)": "Crescent (Wiss)",
+    "Crescent (Nicholson)": "Crescent (Nicholson)",
+    "Crescent (Lufkin)": "Crescent (Lufkin)",
+    "GEARWRENCH": "GEARWRENCH",
+    "Anchor Brand": "Anchor Brand",
+    "Empire": "Empire",
+    "Precision Brand": "Precision Brand",
+    "Milwaukee": "Milwaukee",
+    "RIDGID": "RIDGID",
 }
 GROUP_PREFIXES = ("Essendant", "Rust-Oleum", "SC Johnson",
-                  "Schaeffler", "Regal Rexnord", "PIP")
+                  "Schaeffler", "Regal Rexnord", "PIP", "Crescent")
 
 
 def _pk(printed):
