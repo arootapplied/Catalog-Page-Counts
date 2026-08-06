@@ -1,0 +1,7 @@
+# Guardrail 6 (catalog-page-counts): catalog content stays with its owner.
+# Never commit catalog PDFs, rendered pages, or overlay images.
+work/
+*.pdf
+*.png
+__pycache__/
+*.pyc
