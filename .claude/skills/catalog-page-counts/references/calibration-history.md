@@ -465,3 +465,53 @@ Result: Bison Gear 2.144, Regal Rexnord (LEESON) 0.502, ABB (Baldor-Reliance)
   product sections) — the plain case that still needs the full scan to
   *confirm*, not assume, since nothing about a page's simplicity is knowable
   in advance.
+
+## Climax Metal format adoption — new default deliverable shape
+
+The user handed over `Climax_Metal - AI Page Counts.xlsx`, a real house-format
+workbook from someone on the billing team, with the instruction that future
+PDFs should copy it. Reading it in full (via `openpyxl`, cell-by-cell — values,
+fonts, fills, column widths) turned up a workbook shape genuinely different
+from everything produced so far in this job, and confirmed with the user
+before building anything:
+
+- **Grouped by catalog chapter, not by every supplier on the page.** The
+  "Page Counts" sheet's main table is `Chapter | Page Count (fractional
+  pages)` — one row per chapter the target supplier (Climax Metal) appears
+  in, not one row per brand with Entry-N columns across pages.
+- **Scope is narrowed to the named supplier only** — confirmed explicitly
+  with the user rather than assumed. Two of Climax's nine pages (printed 396,
+  398) also carry Tsubaki and Lovejoy content, but those brands were *not*
+  measured at all. The engine's own ">15% unattributed" invariant fired on
+  both pages as a result (28.6%/49.3% Climax-only coverage), and rather than
+  resolving that by also measuring Tsubaki/Lovejoy (the old convention), the
+  workbook explains it directly: a grey note naming the co-located suppliers
+  and stating plainly that this is expected, not an error, for a
+  Climax-only run. This is a real scope choice with a real consequence — it
+  means every future single-supplier extract in this job needs *only* that
+  supplier's own boundary found precisely, not everyone else's too.
+- **One workbook per extract PDF, not a cumulative per-supplier file** —
+  also confirmed explicitly. Even though the `Source PDF` column on the
+  Measurements sheet would support merging rows from multiple extracts of
+  the same supplier into one running workbook, that's not the convention
+  here; each extract gets its own file.
+- Built `scripts/catalog_chapter_workbook.py` to produce this shape, reusing
+  `measure_page`/`CONFIG`/`render_overlay` from `catalog_page_counts.py`
+  rather than re-deriving the area math (same pattern as the poppler engine).
+- **Validated by exact reproduction, not eyeballing.** Built a synthetic
+  9-page test PDF and a `regions.json` using the real Climax file's own
+  region rectangles (e.g. `40.5,508.8,567.0,739.9` for printed p.396) so the
+  test's expected numbers were the reference file's actual numbers, not
+  guesses. First pass matched the grand total (7.779) but was off by one row
+  from "TOTAL" onward — a spurious blank row before the TOTAL row that
+  wasn't in the reference. Fixed, then diffed every cell's value *and* style
+  (bold/color/fill) across all three sheets against the original: zero
+  differences. This is the level of verification a new deliverable *format*
+  warrants before it becomes the default for every future PDF — a plausible-
+  looking near-match would have shipped a subtly wrong template to every
+  subsequent run.
+- `catalog_billing_workbook.py` (the old multi-supplier, Entry-column,
+  family-subtotal layout) is not deprecated — it's still correct for a
+  genuine co-op billing split across several suppliers sharing the same
+  pages, which is a different question than "how much space does this one
+  supplier have." SKILL.md now documents both and when to reach for each.

@@ -153,7 +153,71 @@ python3 scripts/catalog_page_counts_poppler.py measure <catalog.pdf> <regions.js
 - **Overlays are SVG, not PNG.** They reconstruct every real text/image rectangle plus the billed region boxes from exact coordinates, so boundaries are checkable — but they are *not* a picture of the rendered page. Because Engine B cannot rasterize, the mandatory visual spot-check (Guardrails 5 & 8) is only *partially* satisfied: state plainly in the delivery that a human eyeball against the actual PDF is still owed before any number is invoiced.
 - Everything else (flags, the 15%-unattributed rule, no-overlap / no-leak invariants) behaves exactly as Engine A because it *is* Engine A's code.
 
-## Excel deliverable — `scripts/catalog_billing_workbook.py`
+## Excel deliverable, default shape — `scripts/catalog_chapter_workbook.py`
+
+**This is the default Excel deliverable as of 2026-08** (see
+`references/calibration-history.md`, "Climax Metal format adoption"), built to
+match a real house format a billing-team member handed over. Use it whenever
+an extract PDF is about ONE named/target supplier and the question is "how
+many pages does this supplier occupy, grouped by catalog chapter" — which is
+the common case an extract file name like `Bison_Gear.pdf` or
+`Blaster_Chemicals.pdf` actually implies. Reach for the multi-supplier
+`catalog_billing_workbook.py` below only when the job is genuinely a co-op
+split across several suppliers on the same pages (the ABB/Crescent/Cleco-style
+runs earlier in this job's history) — ask if it's unclear which is wanted.
+
+**The scope is intentionally narrower than a full co-op billing run: measure
+only the named/target supplier.** Build `regions.json` with *only that
+supplier's* own billable regions — never add a region for a co-located
+supplier or for house content in this workflow. Any page where the target
+doesn't cover the whole content band will trip the measurement engine's own
+">15% unattributed" invariant automatically; that is **expected here, not a
+defect**, because the remainder genuinely belongs to someone this run isn't
+measuring. The workflow is: still find and confirm the target supplier's own
+exact boundary the normal way (separator rules, logo scan, overlay
+spot-check) — precision on *that* still matters — but don't chase down where
+every other brand on the page starts and ends just to file it as excluded.
+That's real time saved over the full co-op approach, not a shortcut on rigor
+for the number that is actually being delivered.
+
+```bash
+python3 scripts/catalog_chapter_workbook.py <catalog.pdf> <regions.json> \
+    <folio_map.json> <chapter_map.json> "<Supplier Name>" <source_pdf_name> \
+    <out.xlsx> [overlay_dir] [flag_note]
+```
+
+- `chapter_map.json` (`{"1": "Power Transmission", ...}`, PDF page -> chapter
+  name) is new relative to the other scripts: read the chapter name off each
+  page's own running header banner — the same header text already skimmed
+  during folio recovery — never assume it from the file name or carry it over
+  from a previous extract, since a supplier extract can legitimately span
+  more than one chapter (see the Climax Metal example: General Industrial
+  Products *and* Power Transmission in one 9-page pull).
+- `flag_note` is where the "expected, not an error" explanation for any
+  unattributed-space flags goes. Write down *specifically* who else is on the
+  flagged page and why they're out of scope for this run (something you
+  actually saw when rendering the page) — never leave a flag unexplained, and
+  never name a co-located supplier you didn't identify.
+- Reuses `measure_page`/`CONFIG`/`render_overlay` imported from
+  `catalog_page_counts.py` — same one-source-of-truth pattern the poppler
+  engine uses, so the area math is never re-derived per workbook shape.
+- **Workbook layout** (three sheets, matching the reference file
+  field-for-field): **Page Counts** — DRAFT banner, a grey provenance line
+  (engine, source PDF, PDF page count, printed-page range, invariant flag
+  count), a bold title `"<Supplier> - AI Page Counts"`, a grey-header chapter
+  totals table, a yellow-highlighted TOTAL row, the flag-note paragraph (only
+  present when there are flags), then a per-page breakdown table (chapter,
+  printed page, fraction, billable). **Per-page detail** — one row per
+  measured region (chapter, printed page, supplier, fraction, billable,
+  region rect). **Measurements** — the raw geometry (PDF page, printed page,
+  chapter, sq pts, % of content page, source PDF filename) — the `Source PDF`
+  column exists so rows from more than one extract could in principle share a
+  sheet, even though the current convention (confirmed with the user) is one
+  workbook per extract PDF, not a cumulative per-supplier file.
+- Same DRAFT-stamp and no-openpyxl-needed guardrails as the multi-supplier
+  script below apply here unchanged.
+
+## Excel deliverable, multi-supplier co-op split — `scripts/catalog_billing_workbook.py`
 
 Turns the measurement CSV into a billing workbook in one command:
 
