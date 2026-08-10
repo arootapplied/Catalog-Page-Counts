@@ -85,7 +85,12 @@ publisher for a supplier taking space.
   extract, printed p.5) — note it carries **no applied.com URL at all**, since
   it points at another chapter of the catalog rather than the website, so a
   URL-based house-content test will miss it. Identify it by the bordered box
-  plus the absence of any supplier logo.
+  plus the absence of any supplier logo. Shape (c) ("Register With Us and Save
+  Time!") also recurs as a **full-width bottom band** rather than the
+  half-column panel first seen on the PIP extract — same headline and
+  applied.com/register link, different geometry (Apex-fastener/Milwaukee
+  extract, printed p.16, 0.153 of the page). Match shape (c) by its heading
+  text, not by its layout.
   Shape (d) has no promo-style heading at all
   and reads like body copy — identify it by the applied.com call-to-action and
   the absence of any supplier logo. The black running banner carrying the
@@ -163,6 +168,19 @@ blocks. **Precision Brand** (feeler gages, thickness gages) — standalone.
 Note this is *not* obviously the same entity as the registry's existing
 **Anchor Wiping Cloth**; do not merge the two without confirmation.
 **Milwaukee** (tape measures) — standalone. All same run.
+
+**APEX (Assembly & Fabrication Tools)** — bit holders, hex bits, insert bits.
+**This is a DIFFERENT COMPANY from Apex Tool Group** (the parent of GEARWRENCH
+and Crescent, discussed above and below). The two share nothing but a name:
+this APEX's own logo reads "APEX / ASSEMBLY & FABRICATION TOOLS" in orange
+vector art, fill `(0.894, 0.328, 0.001)`, and it is a fastening/bit-driving
+tool brand, not the GEARWRENCH/Crescent parent. The extract this was found on
+was even named with "Apex" in the filename alongside a genuine Apex-Tool-Group
+extract from the same job — do not let two same-named brands in one job merge
+into a single row. Kept in `MAP` under a name that spells out the distinction
+so it can never collide with a future "Apex Tool Group" rollup row.
+— Applied master catalog Hand, Power & Analytical Tools chapter, printed p.16
+(2026-08).
 
 **Wright Tool** (Wright Tool Company — combination and adjustable wrenches,
 "Made in the USA", WrightGrip). Independent US manufacturer; **not** an Apex

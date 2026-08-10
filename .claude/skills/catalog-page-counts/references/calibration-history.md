@@ -337,3 +337,37 @@ Brand 0.121, RIDGID 0.069, Applied house 0.267.
   (printed p.5, 0.0895 of the page). No `applied.com` URL at all — it points at
   another *chapter* rather than the website, so a URL-based house-content test
   would miss it. Identify it by the bordered box + no supplier logo.
+
+## Single page, two brands sharing an "Apex" name (Apex-fastener/Milwaukee)
+
+Run against a 1-page extract of the same Hand, Power & Analytical Tools
+chapter (printed p.16), Engine A. 4 regions, zero flags, sums to exactly
+1.000. Result: APEX (Assembly & Fabrication Tools) 0.610, Milwaukee 0.238,
+Applied house 0.153.
+
+The one thing this run exists to flag:
+
+- **The job handed two genuinely different companies both named "Apex" in the
+  same batch of extracts.** This page's own logo reads "APEX / ASSEMBLY &
+  FABRICATION TOOLS" (bit holders, hex bits) — unrelated to **Apex Tool
+  Group**, the parent of GEARWRENCH and Crescent measured in the two prior
+  extracts of this same job. The uploaded file names made this worse, not
+  better: "Apex_Power_Tool_Apex_Industrial_Fastener" reads like it could be
+  Apex Tool Group again. It is not. The registry now names this brand
+  `APEX (Assembly & Fabrication Tools)` in full every time specifically so it
+  can never collide with an "Apex Tool Group" rollup row if the billing owner
+  later asks for one. When a job spans multiple extracts, re-derive each
+  brand's identity from its own logo — a shared filename token across extracts
+  is exactly the kind of thing that causes a false merge.
+- Milwaukee reconfirmed independently here (raster+vector on the earlier hand
+  tool runs, raster wordmark here) — three-for-three on being a real,
+  independent brand rather than a fixture of one extract.
+- The "Register With Us and Save Time!" house block (registry shape (c))
+  recurred in a new geometry: a full-width band at the bottom of the page
+  rather than the half-column panel seen on the PIP extract. Matched by
+  heading text, not layout — a reminder that a house shape's *identity* is its
+  wording and lack of a supplier logo, not any specific rectangle.
+- Single-page extracts are still worth the full pipeline: this one page still
+  needed the fill+cluster logo scan, a midpoint split (no rule separates
+  Milwaukee from the house box), and a full overlay review before the numbers
+  were trustworthy.

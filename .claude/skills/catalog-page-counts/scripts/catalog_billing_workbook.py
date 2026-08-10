@@ -168,6 +168,10 @@ MAP = {
     # Wright Tool — independent US manufacturer, NOT an Apex Tool Group brand
     # despite sharing pages with GEARWRENCH. Keep separate from any Apex rollup.
     "Wright Tool": "Wright Tool",
+    # APEX (Assembly & Fabrication Tools) -- a DIFFERENT company from Apex Tool
+    # Group (GEARWRENCH/Crescent/Wright-question above). Named distinctly in
+    # MAP on purpose so the two can never collide under one "Apex" row.
+    "APEX (Assembly & Fabrication Tools)": "APEX (Assembly & Fabrication Tools)",
 }
 GROUP_PREFIXES = ("Essendant", "Rust-Oleum", "SC Johnson",
                   "Schaeffler", "Regal Rexnord", "PIP", "Crescent")
