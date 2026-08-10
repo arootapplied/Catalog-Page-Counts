@@ -182,6 +182,31 @@ so it can never collide with a future "Apex Tool Group" rollup row.
 — Applied master catalog Hand, Power & Analytical Tools chapter, printed p.16
 (2026-08).
 
+**Cleco** (Cleco Production Tools — pneumatic impact wrenches, screwdrivers,
+grinders, nutrunners). Widely known outside this registry as an **Apex Tool
+Group** brand (same corporate family as GEARWRENCH and Crescent, measured
+elsewhere in this job) — but that is outside knowledge, not on-page evidence:
+no Apex logo or wording appears anywhere in the 3-page extract this was
+measured on. Kept standalone for now; ask the billing owner before applying
+an Apex Tool Group rollup that would combine it with GEARWRENCH/Crescent.
+Logo is vector art in Cleco's house orange, fill `(0.957, 0.475, 0.127)`
+(also appears as `(1.0, 0.347, 0.0)` on a colored banner background — same
+brand, fill shifts with the substrate it sits on, so match by rendering, not
+by exact fill value alone). — Applied master catalog Hand, Power & Analytical
+Tools chapter, printed pp. 28, 29, 31 (2026-08).
+
+**Cleco (Dotco)** — Dotco is Cleco's brand for pneumatic die grinders. Prints
+as a stacked "Cleco / Dotco™" lockup, same justification as Crescent's
+Wiss/Nicholson/Lufkin sub-brands: the family is stated by the artwork.
+
+**Ingersoll Rand** (air tools — impact wrenches, angle grinders). Standalone.
+Logo is vector art in red, fill `(0.875, 0.152, 0.111)`. Same run.
+
+**Fluke** (Fluke Corporation — infrared thermometers, test/measurement
+instruments). Standalone; appears on a page otherwise all Cleco content, a
+reminder to keep scanning to the bottom of a page even when everything above
+looks like one supplier's chapter section. Same run.
+
 **Wright Tool** (Wright Tool Company — combination and adjustable wrenches,
 "Made in the USA", WrightGrip). Independent US manufacturer; **not** an Apex
 Tool Group brand, despite sharing a page with GEARWRENCH. Keep it out of any

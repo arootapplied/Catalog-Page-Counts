@@ -172,9 +172,13 @@ MAP = {
     # Group (GEARWRENCH/Crescent/Wright-question above). Named distinctly in
     # MAP on purpose so the two can never collide under one "Apex" row.
     "APEX (Assembly & Fabrication Tools)": "APEX (Assembly & Fabrication Tools)",
+    "Ingersoll Rand": "Ingersoll Rand",
+    "Cleco": "Cleco",
+    "Cleco (Dotco)": "Cleco (Dotco)",
+    "Fluke": "Fluke",
 }
 GROUP_PREFIXES = ("Essendant", "Rust-Oleum", "SC Johnson",
-                  "Schaeffler", "Regal Rexnord", "PIP", "Crescent")
+                  "Schaeffler", "Regal Rexnord", "PIP", "Crescent", "Cleco")
 
 
 def _pk(printed):

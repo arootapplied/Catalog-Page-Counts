@@ -371,3 +371,39 @@ The one thing this run exists to flag:
   needed the fill+cluster logo scan, a midpoint split (no rule separates
   Milwaukee from the house box), and a full overlay review before the numbers
   were trustworthy.
+
+## Cleco/Ingersoll Rand air-tool chapter — Apex Tool Group rollup withheld
+
+Run against a 3-page Apex(-power-tool)/Cleco extract of the same Hand, Power &
+Analytical Tools chapter (printed pp. 28, 29, 31 — p.30 absent), Engine A.
+15 regions, zero flags, sums to exactly 3.000 with no house content at all.
+Result: Ingersoll Rand 1.502, Cleco 0.935, Fluke 0.218, Osborn 0.207,
+Cleco (Dotco) 0.138.
+
+- **Cleco is the clearest case yet of outside knowledge vs. on-page evidence.**
+  Cleco is genuinely, factually an Apex Tool Group brand — this is common
+  knowledge, unlike the APEX-Assembly-&-Fabrication-Tools mixup two extracts
+  ago, which really is unrelated. But the rule this skill runs on is the same
+  either way: **no Apex logo or wording appears anywhere in this extract**, so
+  no rollup was applied. Being confident an outside fact is *true* is not the
+  same as it being *on the page*, and the billing convention this method
+  serves bills off what a page states, not off a Wikipedia-level fact about
+  who owns whom. Handed to the billing owner as an open question rather than
+  applied unilaterally.
+- **A fill value can shift with its background and still be the same logo.**
+  Cleco's orange reads as `(0.957, 0.475, 0.127)` on white product pages but
+  `(1.0, 0.347, 0.0)` on the colored "Tame the Line" banner — a visibly
+  different RGB triple for the same brand mark. A fill-match search is still
+  useful for finding candidates fast, but two different fills belonging to one
+  brand is exactly the same lesson as one fill belonging to two brands
+  (Milwaukee/MCR Safety, four extracts ago) — confirm by rendering either way.
+- **A bordered intro banner can flow straight into its own product section
+  with no rule between them.** Printed p.31's "Cleco | Tame the Line" banner
+  and the 12LF Series Right Angle Grinder section that follows it share no
+  separator — both are Cleco, so they were written as one region bounded by
+  the next real rule, per the "adjacent same-supplier sections merge" pattern
+  from the Crescent extract.
+- **Fluke sits at the bottom of an otherwise all-Cleco page.** Nothing about
+  the page's first four sections predicts it; only scanning to the very
+  bottom of p.31 caught it. A habit worth repeating on every page regardless
+  of how uniform the top looks.
