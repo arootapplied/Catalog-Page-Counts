@@ -80,7 +80,12 @@ publisher for a supplier taking space.
   p.355; Apex/Crescent hand tools printed p.6) at different sizes — 0.297 and
   0.177 of a page — so treat it as a recurring fixture of this catalog rather
   than a one-off, and measure its box border each time instead of reusing a
-  prior run's rectangle.
+  prior run's rectangle. A sixth shape (f) is a bordered **"Safety is a Big
+  Deal!"** *chapter* cross-sell box with a lightbulb icon (Apex/GearWrench
+  extract, printed p.5) — note it carries **no applied.com URL at all**, since
+  it points at another chapter of the catalog rather than the website, so a
+  URL-based house-content test will miss it. Identify it by the bordered box
+  plus the absence of any supplier logo.
   Shape (d) has no promo-style heading at all
   and reads like body copy — identify it by the applied.com call-to-action and
   the absence of any supplier logo. The black running banner carrying the
@@ -158,6 +163,25 @@ blocks. **Precision Brand** (feeler gages, thickness gages) — standalone.
 Note this is *not* obviously the same entity as the registry's existing
 **Anchor Wiping Cloth**; do not merge the two without confirmation.
 **Milwaukee** (tape measures) — standalone. All same run.
+
+**Wright Tool** (Wright Tool Company — combination and adjustable wrenches,
+"Made in the USA", WrightGrip). Independent US manufacturer; **not** an Apex
+Tool Group brand, despite sharing a page with GEARWRENCH. Keep it out of any
+Apex rollup. Logo is vector art in dark navy, fill `(0.026, 0.17, 0.283)`,
+bbox ~72x12 pt — see the clustering warning below for why it is easy to miss.
+— Applied master catalog Hand, Power & Analytical Tools chapter, printed
+pp. 3-6, 10 (2026-08).
+
+> **Group vector paths by fill AND spatial proximity, not fill alone.** The
+> SKILL.md example groups `get_drawings()` by fill color and then filters the
+> per-fill bounding box by size. That silently loses any logo whose fill is
+> reused elsewhere on the page: the group bbox stretches to cover every
+> same-colored path and blows past the size filter. Wright Tool's logo was
+> invisible to a fill-only scan for exactly this reason, on a page where Wright
+> owned 0.795 of the billable space. Cluster the rects *within* each fill group
+> by proximity (single-link, ~6 pt gap) and test each cluster's bbox. Also do
+> not exclude pure black `(0,0,0)` fills as "text" — plenty of wordmark logos
+> are black vector art.
 
 > **Fill colors are a search hint, not an identity.** Milwaukee's logo on this
 > extract is vector art with fill `(0.890, 0.096, 0.214)` — byte-identical to

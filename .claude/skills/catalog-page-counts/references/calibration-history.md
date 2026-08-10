@@ -300,3 +300,40 @@ added three things:
   brands, but no Apex logo or wording appears anywhere in it. GEARWRENCH was
   left standalone and the Apex roll-up question handed to the billing owner
   rather than silently applied — it would move 0.412 pages.
+
+## Sibling extract, two shared pages — cross-extract agreement (GearWrench)
+
+Run against a 5-page Apex/GearWrench extract of the same chapter (printed pp. 3,
+4, 5, 6, 10), Engine A. 18 regions, zero flags, sums to exactly 5.000.
+Result: GEARWRENCH 2.528, Wright Tool 0.795, Empire 0.366, Crescent family 0.669
+(Crescent 0.347 + Lufkin 0.224 + Nicholson 0.098), Precision Brand 0.185, Anchor
+Brand 0.121, RIDGID 0.069, Applied house 0.267.
+
+- **The repeat-brand consistency check fired for real, and passed.** Printed
+  pp. 6 and 10 are the *same physical pages* as this chapter's Crescent extract
+  (PDF p1 and p4 there). Their region specs were rebuilt independently from this
+  file's own recovered geometry — the rules matched to the hundredth of a point —
+  and every one of the eleven shared regions produced a byte-identical
+  `pct_of_content_page`. Worth doing deliberately whenever two extracts overlap:
+  it is a free end-to-end check that the geometry recovery is deterministic.
+  A quick way to spot the overlap before measuring: identical
+  `(text length, image count, drawing count)` triples across the two files.
+- **A fill-only logo scan lost a supplier worth 0.795 pages.** See the
+  clustering warning now in `supplier-registry.md`. Wright Tool's navy vector
+  wordmark shares its fill with other art on printed p.3, so grouping
+  `get_drawings()` by fill alone produced a page-spanning bbox that the size
+  filter discarded — the page looked like it had one supplier (GEARWRENCH, whose
+  logo sits at the *bottom*) when in fact Wright owned the top two of three
+  bands. Fixed by clustering spatially inside each fill group; a reusable
+  implementation is in the run's `logo_scan.py`. Excluding black fills as
+  "probably text" was the second half of the same mistake.
+- **Whole-page single-supplier pages still need the scan.** Printed p.4 is
+  100.0% GEARWRENCH across a full-width band plus a three-column tier — the one
+  page in three runs that is genuinely one region. That was established by
+  scanning it, not by assuming it from the extract's name.
+- Banner overstated a fourth time: "15 pages" against a real `/Count` of **5**.
+- A sixth Applied house-content shape: a bordered **"Safety is a Big Deal!"**
+  chapter cross-sell box with a lightbulb icon, bottom of a column
+  (printed p.5, 0.0895 of the page). No `applied.com` URL at all — it points at
+  another *chapter* rather than the website, so a URL-based house-content test
+  would miss it. Identify it by the bordered box + no supplier logo.

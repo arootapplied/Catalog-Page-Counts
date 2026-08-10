@@ -165,6 +165,9 @@ MAP = {
     "Precision Brand": "Precision Brand",
     "Milwaukee": "Milwaukee",
     "RIDGID": "RIDGID",
+    # Wright Tool — independent US manufacturer, NOT an Apex Tool Group brand
+    # despite sharing pages with GEARWRENCH. Keep separate from any Apex rollup.
+    "Wright Tool": "Wright Tool",
 }
 GROUP_PREFIXES = ("Essendant", "Rust-Oleum", "SC Johnson",
                   "Schaeffler", "Regal Rexnord", "PIP", "Crescent")
