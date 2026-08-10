@@ -90,7 +90,11 @@ publisher for a supplier taking space.
   half-column panel first seen on the PIP extract — same headline and
   applied.com/register link, different geometry (Apex-fastener/Milwaukee
   extract, printed p.16, 0.153 of the page). Match shape (c) by its heading
-  text, not by its layout.
+  text, not by its layout. An **eighth shape (g)** points at another
+  *chapter* rather than a URL: "Applied® carries the right tool for the right
+  job. Check out our tool selection in Chapter 1..." (Bishop-Wisecarver
+  extract, Bearings chapter, printed p.324, 0.162 of the page) — same family
+  as shape (f) (points inward, not to applied.com) but distinct wording.
   Shape (d) has no promo-style heading at all
   and reads like body copy — identify it by the applied.com call-to-action and
   the absence of any supplier logo. The black running banner carrying the
@@ -206,6 +210,14 @@ Logo is vector art in red, fill `(0.875, 0.152, 0.111)`. Same run.
 instruments). Standalone; appears on a page otherwise all Cleco content, a
 reminder to keep scanning to the bottom of a page even when everything above
 looks like one supplier's chapter section. Same run.
+
+**PBC Linear** (Hevi-Rail, Redi-Rail linear guide/bearing systems). Already
+listed above as standalone (with its Simplicity sub-brand) — reconfirmed on
+the Bearings chapter, logo a red chevron/arrow wordmark. Its Hevi-Rail and
+Redi-Rail sections spanned a two-column tier plus a full-width band on one
+page, all PBC Linear — written as a single region since one supplier occupied
+every part of the tier. — Bishop-Wisecarver extract, Bearings chapter, printed
+p.326 (2026-08).
 
 **Wright Tool** (Wright Tool Company — combination and adjustable wrenches,
 "Made in the USA", WrightGrip). Independent US manufacturer; **not** an Apex

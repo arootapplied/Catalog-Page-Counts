@@ -176,6 +176,12 @@ MAP = {
     "Cleco": "Cleco",
     "Cleco (Dotco)": "Cleco (Dotco)",
     "Fluke": "Fluke",
+    # Bearings chapter (Bishop-Wisecarver extract). Thomson already exists as
+    # a Regal Rexnord family member from the Dodge extract; PBC Linear and
+    # Bishop-Wisecarver are standalone per the registry.
+    "Thomson (Regal Rexnord)": "Regal Rexnord (Thomson)",
+    "Bishop-Wisecarver": "Bishop-Wisecarver",
+    "PBC Linear": "PBC Linear",
 }
 GROUP_PREFIXES = ("Essendant", "Rust-Oleum", "SC Johnson",
                   "Schaeffler", "Regal Rexnord", "PIP", "Crescent", "Cleco")

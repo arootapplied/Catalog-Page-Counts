@@ -407,3 +407,32 @@ Cleco (Dotco) 0.138.
   the page's first four sections predicts it; only scanning to the very
   bottom of p.31 caught it. A habit worth repeating on every page regardless
   of how uniform the top looks.
+
+## First non-Hand-Tools chapter, and a clean multi-region merge (Bishop-Wisecarver)
+
+Run against a 3-page Bishop-Wisecarver extract of the Applied master catalog's
+**Bearings** chapter (printed pp. 324-326, contiguous), Engine A. 6 regions,
+zero flags, sums to exactly 3.000 on every page. Result: Bishop-Wisecarver
+1.733, PBC Linear 0.718, Regal Rexnord (Thomson) 0.387, Applied house 0.162.
+
+- **First extract in this job from outside Hand, Power & Analytical Tools.**
+  Confirms the method (header/footer bands at the same y=45.0/rule
+  boundaries, folio recovery from footers, midpoint-vs-rule logic) transfers
+  cleanly to a different chapter rather than being tuned to one chapter's
+  quirks. Thomson reconfirmed as a Regal Rexnord family member (already in
+  the registry from the Dodge extract), rolling up automatically via the
+  existing `MAP` entry.
+- **The clearest case yet for merging adjacent same-supplier sections.**
+  Printed p.326 is Bishop-Wisecarver on top, then PBC Linear filling the
+  *entire rest of the page* — a two-column tier (Hevi-Rail U-Channel Rail |
+  Redi-Rail Linear Guides Slider) followed by a full-width band (Hevi-Rail
+  Linear Bearing), three distinct product sections and a column divider, but
+  one supplier throughout. Written as a single region rather than three or
+  four — same area, much simpler spec, and nothing for the invariants to
+  catch either way since there's no boundary to get wrong.
+- **An eighth Applied house-content shape**: "Applied® carries the right tool
+  for the right job. Check out our tool selection in Chapter 1, or visit
+  Applied.com..." (printed p.324, 0.162 of the page) — like shape (f), it
+  points at another chapter of the catalog rather than only a URL, but with
+  different wording, so shapes (f) and (g) are both identified by "bordered
+  box + no supplier logo," not by a shared phrase.
