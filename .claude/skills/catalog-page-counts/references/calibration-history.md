@@ -436,3 +436,32 @@ zero flags, sums to exactly 3.000 on every page. Result: Bishop-Wisecarver
   points at another chapter of the catalog rather than only a URL, but with
   different wording, so shapes (f) and (g) are both identified by "bordered
   box + no supplier logo," not by a shared phrase.
+
+## Third cross-extract overlap in this job (Bison Gear)
+
+Run against a 3-page Bison Gear extract, back in Power Transmission (printed
+pp. 358, 372, 373), Engine A. 8 regions, zero flags, sums to exactly 3.000.
+Result: Bison Gear 2.144, Regal Rexnord (LEESON) 0.502, ABB (Baldor-Reliance)
+0.244, Applied house 0.11.
+
+- **Printed p.358 is the same physical page as PDF p11 in the ABB extract**
+  measured earlier in this job (ABB/Bison/LEESON three-way split). Rebuilt
+  independently from this file's own geometry and it matched the ABB run's
+  numbers exactly (24.43 / 25.34 / 50.23) — the third confirmed cross-extract
+  overlap in this job (after the two Crescent/GearWrench overlaps), and each
+  one has passed cleanly. Detected the same way as before: identical
+  `(text length, image count, drawing count)` triples across files.
+  `wrote_regions.json` for this page was typed independently rather than
+  copied from the ABB run's script, which is what makes the match meaningful
+  rather than circular.
+- **Shape (g)'s exact wording varies between printings.** This extract's
+  Applied house box reads "Applied® **Carries** the Right Tool for the Right
+  Job. **Check out our tool selection in Chapter 1**, or visit Applied.com..."
+  — near-identical to the Bishop-Wisecarver run's box but with different
+  capitalization/phrasing ("Applied® **carries**..." there). Same shape,
+  same identification method (bordered box, no supplier logo), just don't
+  expect byte-identical text across different chapters' printings of it.
+- Printed p.372 is a clean single-supplier page (100% Bison Gear across two
+  product sections) — the plain case that still needs the full scan to
+  *confirm*, not assume, since nothing about a page's simplicity is knowable
+  in advance.
