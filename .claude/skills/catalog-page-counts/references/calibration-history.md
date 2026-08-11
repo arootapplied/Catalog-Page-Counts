@@ -515,3 +515,57 @@ before building anything:
   genuine co-op billing split across several suppliers sharing the same
   pages, which is a different question than "how much space does this one
   supplier have." SKILL.md now documents both and when to reach for each.
+
+## Confirmed brand-mismatch pattern: five "Sherwin Williams"-named extracts
+
+Starting with the Streamlight extract and continuing through White Lightning,
+Tri-Flow, and Sprayon, a run of files arrived whose names didn't match what
+was printed on the page: "Tovatech" absent from an Elma page, "Solve"/"IMG"
+absent from a PTI page, "Sherwin Williams" absent from three separate
+extracts (White Lightning, Tri-Flow, Sprayon). Each was individually flagged
+rather than assumed away, per Guardrail 1 (no invented identity) — but by the
+third "Sherwin Williams"-named file it was worth naming as a pattern rather
+than re-litigating file by file, since a repeated mismatch across a job
+usually means something upstream of the PDF (a naming/tagging process) rather
+than three independent one-off surprises. **The Sprayon case is the important
+counter-example, though: the underlying inference was correct.** The registry
+already recorded that Sprayon (not CRC) is the real Sherwin Williams brand —
+so the file names were pointing at true parent-company relationships, just
+not naming the printed logo directly. The lesson isn't "the filenames are
+wrong," it's "measure off the logo and separately state the filename's
+implied entity" — both were worth telling the user, and neither should be
+silently assumed into the other.
+
+## 15-page, three-chapter, single-brand run with 4 cross-extract overlaps (Sprayon)
+
+Run against a 15-page Sprayon extract spanning three catalog chapters
+(Lubrication Products & Equipment pp.79-90, Industrial Chemicals & Coatings
+pp.156-163, Janitorial Products pp.170-176), Engine A. 16 regions across 15
+pages, all 15 pages flagged (every page shares space with brands not
+measured) and all 15 explained in one consolidated note rather than a
+page-by-page essay. Result: Lubrication 2.119, Industrial Chemicals 1.736,
+Janitorial 0.295, total 4.150.
+
+- **Four pages are physically shared with two earlier extracts in this job**
+  (Blaster_Chemicals printed pp.84, 86, 89 and Tri-Flow printed p.88),
+  detected the same way as before (identical text/image/drawing-count
+  triples). Rather than re-deriving Sprayon's rules on those four pages from
+  scratch, the exact rule coordinates already confirmed correct in the
+  Blaster/Tri-Flow runs were reused directly — and then, as the real
+  cross-check, Sprayon's region on each shared page was diffed against the
+  other brand's region from the *other* extract for zero overlap and an
+  exact shared boundary (e.g. Sprayon ends at y=544.12 on printed p.84
+  exactly where B'laster's region starts). All four passed with zero
+  overlap. This is a cheaper and arguably stronger check than the earlier
+  percentage-match consistency checks: overlap-freeness is a hard geometric
+  invariant, not a coincidence of rounding.
+- **A single consolidated flag-note scales better than one clause per page**
+  once a run has many flagged pages: this run's note lists all fourteen
+  co-located non-Sprayon brands across the fifteen pages in one paragraph
+  rather than fifteen separate sentences, while still naming every brand
+  specifically (never a generic "other brands").
+- Multiple pages had 2-3 Sprayon product write-ups merged into one region
+  (p8, p9, p13) purely because they were adjacent and shared no interrupting
+  brand — by this run the pattern from the Crescent/Bishop-Wisecarver extracts
+  (merge adjacent same-supplier sections) is routine rather than a special
+  case to re-justify each time.
